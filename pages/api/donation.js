@@ -6,9 +6,6 @@ export default async (req, res) => { // 2
         try { // 4
             const response = await fetch(`https://www.alvarum.com/ccot4`)
             const htmlString = await response.text()
-            return res.json({
-                money: htmlString
-            })
             const $ = cheerio.load(htmlString)
             const followerCountString = $('.raised .amount .formattedAmount:first-child').text() + '€'
 
