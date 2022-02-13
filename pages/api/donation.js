@@ -10,7 +10,7 @@ export default async (req, res) => { // 2
                 money: htmlString
             })
             const $ = cheerio.load(htmlString)
-            const followerCountString = $('.amount .formattedAmount:first-child').text() + '€'
+            const followerCountString = $('.raised .amount .formattedAmount:first-child').text() + '€'
 
             res.statusCode = 200
             return res.json({
